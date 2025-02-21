@@ -358,4 +358,4 @@ docker-compose down
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
 
-![gutsy](images/image-gutsy-06x.gif)
+![gutsy](images/image-gutsy-06xx.gif)
