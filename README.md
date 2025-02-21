@@ -329,16 +329,28 @@ This builds your app (if needed) and runs it in the background, so that you can 
 
 
 ## Step 12: Verify the Setup
-- Open a browser and navigate to `https://$YOUR_SERVER_IP/token-bm08jm12/index.html`
-- Enter credentials:
-  -  username: **admin**
-  -  password: **secret-passphrase**
-- Ensure HTTP (`http://$YOUR_SERVER_IP/...`) redirects to HTTPS
-- Verify invalid paths return `403 Forbidden`
+1. Open a browser and navigate to `https://$YOUR_SERVER_IP/token-bm08jm12/index.html`
 
 When first visiting the server, you'll see this warning. Click on "`advanced > visit`".
 
 ![gutsy](images/image-gutsy-10x.jpg)
+
+Enter credentials:
+  -  username: **admin**
+  -  password: **secret-passphrase**
+
+You should now see your webpage!
+
+![gutsy](images/image-gutsy-11x.jpg)
+
+2. Now, let's check the 301 redirect. Ensure that HTTP (`http://$YOUR_SERVER_IP/token-bm08jm12/index.html`) redirects to HTTPS (`https://$YOUR_SERVER_IP/token-bm08jm12/index.html`)
+
+3. Next, let's verify that invalid paths return a `403 Forbidden`. So type in a random URL like `https://$YOUR_SERVER_IP/whatever`
+
+You should see something like this:
+![gutsy](images/image-gutsy-12x.jpg)
+
+If those 3 steps pass, then you built the server correctly!
 
 ## Step 13: Push to GitHub
 As mentioned in the pre-reqs, this is optional. You can save your files locally, or use a hub like Github for collaboration and management.
