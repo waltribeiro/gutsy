@@ -76,7 +76,7 @@ Did it install successfully? Let's find out!
 docker --version
 docker-compose --version
 ```
-![gutsy](/gutsy/images/image-gutsy-03.png)
+![gutsy](images/image-gutsy-03.png)
 
 LGTM.
 
