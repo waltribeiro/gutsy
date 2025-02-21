@@ -1,5 +1,4 @@
-![gutsy](images/image-gutsy-01x.png)
-<br></br>
+![gutsy](images/image-gutsy-05xx.gif)
 
 ## TABLE OF CONTENTS
 -----------------
@@ -26,7 +25,7 @@
 # Secure Web App Deployment Tutorial
 [Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
 
-![gutsy](images/image-gutsy-06.png)
+![gutsy](images/image-gutsy-09.png)
 
 ## Pre Req
 In this tutorial you'll need:
@@ -45,6 +44,8 @@ Here’s how I started:
 3. Choose a low-cost droplet (mine was $4/month)
 4. Enable `SSH` and create an `SSH key pair`
 5. Deploy the droplet and note the public IP address at `graphs > ipv4` inside of Digital Ocean
+
+![gutsy](images/image-gutsy-01x.png)
 
 ## Step 2: Connect to Your Server
 Now that we're renting a server from Digital Ocean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
@@ -357,4 +358,4 @@ docker-compose down
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
 
-![gutsy](images/image-gutsy-05.png)
+![gutsy](images/image-gutsy-06xx.gif)
