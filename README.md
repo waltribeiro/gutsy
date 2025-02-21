@@ -404,9 +404,11 @@ Line 5 handles secure connections via TLS
 https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L5
 
 #### PATH
-The path has 3 sections:
-- IP address `<your_server_ip>`
+The path has 2 sections:
+- IP Address `<your_server_ip>`
 - Unique ID `<unique_id>`
+
+`https://<your_server_ip>/token-<unique_id>/index.html`
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
