@@ -4,7 +4,7 @@
 ## TABLE OF CONTENTS
 -----------------
 - [Secure Web App Deployment Tutorial](#secure-web-app-deployment-tutorial)
-- [Pre Req](#pre-req)
+  - [Pre Req](#pre-req)
   - [Step 1: Set Up a Server](#step-1-set-up-a-server)
   - [Step 2: Connect to Your Server](#step-2-connect-to-your-server)
   - [Step 3: Install Docker and Docker Compose](#step-3-install-docker-and-docker-compose)
@@ -24,11 +24,11 @@
 
 
 # Secure Web App Deployment Tutorial
-Gutsy is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
+[Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
 
 ![gutsy](images/image-gutsy-06.png)
 
-# Pre Req
+## Pre Req
 In this tutorial you'll need:
 1. [DigitalOcean](https://www.digitalocean.com/) account – to deploy your secure web server
 2. [Docker](https://www.docker.com/) & Docker Compose installed – to containerize and run your app
@@ -36,26 +36,29 @@ In this tutorial you'll need:
 4. [Github](https://www.github.com/) account (optional) – to store and manage your code
 
 ## Step 1: Set Up a Server
-I'm using Digital Ocean, but you can use any cloud (AWS, Vultr, GCP, Equinix). Here’s how I got started:
+I'm using Digital Ocean, but you can use any cloud (AWS, Vultr, GCP, Equinix).
+
+Here’s how I started:
 
 1. Create a `DigitalOcean` account and log in
 2. Create a new droplet with `Ubuntu 24.10` (or similar)
-3. Choose low-cost droplet (mine was $4/month)
-4. Enable `SSH` and create an `SSH key pair` if you don’t have one
-5. Deploy the droplet and note the public IP address at `graphs > ipv4`
+3. Choose a low-cost droplet (mine was $4/month)
+4. Enable `SSH` and create an `SSH key pair`
+5. Deploy the droplet and note the public IP address at `graphs > ipv4` inside of Digital Ocean
 
 ## Step 2: Connect to Your Server
-`SSH` into your server (use iTerm, VS Code Terminal, etc).
+Now that we're renting a server from Digital Ocean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
 
-My server's ipv4 is `143.198.184.74`, so you should follow this format:
+Follow this format:
 ```sh
 ssh root@$YOUR_SERVER_IP
 ```
 
-So then you should see this: 
+> **Note:** My server's ipv4 is `143.198.184.74`, so I'll type `ssh root@143.198.184.74`
+
+You should then see something like this:
 
 ![gutsy](images/image-gutsy-02x.png)
-
 
 ## Step 3: Install Docker and Docker Compose
 Before we dive in, let’s install Docker and Docker Compose. Docker lets us run our app in containers, and Docker Compose helps us manage multiple containers easily.
