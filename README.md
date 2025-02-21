@@ -109,6 +109,9 @@ The `Dockerfile` is blank, so let's add to it using `nano`:
 nano Dockerfile
 ```
 
+You should see something like this:
+![gutsy](images/image-gutsy-07x.png)
+
 Then we'll paste this into it:
 
 ```dockerfile
@@ -126,6 +129,12 @@ EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
+Once you're done, save and exit by pressing:
+
+- `CTRL` + `X` (to exit)
+- `Y` (to confirm the changes)
+- `Enter` (to save the file name and close)
+
 ## Step 6: Create the Web Server Dockerfile
 Here's our 2nd `Dockerfile`!
 
@@ -142,9 +151,9 @@ CMD ["nginx", "-g", "daemon off;"]
 
 Once you're done, save and exit by pressing:
 
-`CTRL` + `X` (to exit)
-`Y` (to confirm the changes)
-`Enter` (to save the file name and close)
+- `CTRL` + `X` (to exit)
+- `Y` (to confirm the changes)
+- `Enter` (to save the file name and close)
 
 Now our Dockerfile is ready! 
 
@@ -178,6 +187,8 @@ http {
 }
 ```
 The `nginx.conf` file configures how Nginx handles requests, including routing, security (Gutsy loves security!), and performance settings.
+
+The line `return 301 https://$host$request_uri;` is what does the redirect. Pretty cool!
 
 ## Step 8: Create the Web Page
 This file can say anything you want. Inside the `webserver` directory, I'll create a file named `index.html`:
@@ -249,7 +260,11 @@ Similar to what we did with the `Dockerfile` above, let's paste this into the fi
 </html>
 ```
 
-This has some CSS style, a header, and an embedded Youtube video about Gutsy. Feel free to edit it however you like! 
+You should see something like this:
+
+![gutsy](images/image-gutsy-08x.png)
+
+This code has some CSS styling, a header, and an embedded [Youtube video about Gutsy](https://www.youtube.com/watch?v=o0uIS8XL1gE). Feel free to edit the HTML however you like! 
 
 ## Step 9: Generate a Self-Signed TLS Certificate
 We're getting to the end. Now we'll just do the certificates, and then we'll be able to access our new secure (HTTPS) website hosted on Digital Ocean.
@@ -282,6 +297,12 @@ services:
       - "80"
 ```
 
+This file defines a simple multi-container application with two services:
+- proxy
+- webserver
+
+The proxy listens on port 443 and the webserver runs on port 80. In practice, the proxy service forwards requests over to the webserver.
+
 ## Step 11: Build and Run the Containers
 Run the following command to build and start the containers:
 
@@ -289,7 +310,7 @@ Run the following command to build and start the containers:
 docker-compose up --build -d
 ```
 
-This builds your app (if needed) and runs it in the background, so you can keep working without keeping the terminal tied up.
+This builds your app (if needed) and runs it in the background, so that you can keep working without keeping the terminal tied up.
 
 > **Note:** If you edit any of your code (including the `index.html` page), you'll need to run this command again for the changes to take effect.
 
@@ -299,7 +320,7 @@ This builds your app (if needed) and runs it in the background, so you can keep 
 - Enter credentials:
   -  username: **admin**
   -  password: **secret-passphrase**
-- Ensure HTTP (`http://your-server-ip/...`) redirects to HTTPS
+- Ensure HTTP (`http://$YOUR_SERVER_IP/...`) redirects to HTTPS
 - Verify invalid paths return `403 Forbidden`
 
 ## Step 13: Push to GitHub
