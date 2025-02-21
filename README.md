@@ -17,7 +17,11 @@
   - [Step 11: Build and Run the Containers](#step-11-build-and-run-the-containers)
   - [Step 12: Verify the Setup](#step-12-verify-the-setup)
   - [Step 13: Push to GitHub](#step-13-push-to-github)
-  - [Step 14: Stop and Cleanup](#step-14-stop-and-cleanup)
+  - [Step 14: Docker Down and Cleanup](#step-14-docker-down-and-cleanup)
+  - [Deliverables](#deliverables)
+      - [CONTAINERS](#containers)
+      - [PORTS](#ports)
+      - [PATH](#path)
   - [Conclusion](#conclusion)
 
 # Tutorial: Build A Secure Web Server
@@ -371,7 +375,7 @@ Your tree directory for the file structure will look like this:
           └── index.html
 ```
 
-## Step 14: Stop and Cleanup
+## Step 14: Docker Down and Cleanup
 To stop and remove the containers:
 
 ```sh
@@ -379,6 +383,30 @@ docker-compose down
 ```
 
 > **Note:** Be sure to delete your DigitalOcean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04x.jpg)
+
+## Deliverables
+#### CONTAINERS
+- secure-web-app-proxy
+Line 5 is HTTPS
+https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L5
+
+- secure-web-app – 
+Line 13 hosts confidential content after authentication
+https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L13
+
+#### PORTS
+- 80 (HTTP)
+Line 21 redirects all traffic to HTTPS
+https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L21
+
+- 443 (HTTPS)
+Line 5 handles secure connections via TLS
+https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L5
+
+#### PATH
+The path has 3 sections:
+- IP address `<your_server_ip>`
+- Unique ID `<unique_id>`
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
