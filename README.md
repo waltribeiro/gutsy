@@ -1,4 +1,4 @@
-![alt text](/gutsy/images/image-gutsy-01.png)
+![alt text](images/image-gutsy-01.png)
 <br></br>
 
 ## TABLE OF CONTENTS
@@ -311,9 +311,9 @@ docker-compose down
 
 Be sure to delete your Digital Ocean droplet after this tutorial.
 
-![alt text](/gutsy/images/image-gutsy-04.png)
+![alt text](/images/image-gutsy-04.png)
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
 
-![alt text](/gutsy/images/image-gutsy-05.png)
+![alt text](./images/image-gutsy-05.png)
