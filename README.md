@@ -25,7 +25,7 @@
 # Secure Web App Deployment Tutorial
 [Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
 
-![gutsy](images/image-gutsy-09.png)
+![gutsy](images/image-gutsy-09x.jpg)
 
 ## Pre Req
 In this tutorial you'll need:
@@ -45,7 +45,7 @@ Here’s how I started:
 4. Enable `SSH` and create an `SSH key pair`
 5. Deploy the droplet and note the public IP address at `graphs > ipv4` inside of Digital Ocean
 
-![gutsy](images/image-gutsy-01x.png)
+![gutsy](images/image-gutsy-01x.jpg)
 
 ## Step 2: Connect to Your Server
 Now that we're renting a server from Digital Ocean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
@@ -59,7 +59,7 @@ ssh root@$YOUR_SERVER_IP
 
 You should then see something like this:
 
-![gutsy](images/image-gutsy-02x.png)
+![gutsy](images/image-gutsy-02x.jpg)
 
 ## Step 3: Install Docker and Docker Compose
 Before we dive in, let’s install Docker and Docker Compose. Docker lets us run our app in containers, and Docker Compose helps us manage multiple containers easily.
@@ -80,7 +80,7 @@ Did it install successfully? Let's find out!
 docker --version
 docker-compose --version
 ```
-![gutsy](images/image-gutsy-03x.png)
+![gutsy](images/image-gutsy-03x.jpg)
 
 LGTM.
 
@@ -114,7 +114,7 @@ nano Dockerfile
 ```
 
 You should see something like this:
-![gutsy](images/image-gutsy-07x.png)
+![gutsy](images/image-gutsy-07x.jpg)
 
 Then we'll paste this into it:
 
@@ -266,7 +266,7 @@ Similar to what we did with the `Dockerfile` above, let's paste this into the fi
 
 You should see something like this:
 
-![gutsy](images/image-gutsy-08x.png)
+![gutsy](images/image-gutsy-08x.jpg)
 
 This code has some CSS styling, a header, and an embedded [Youtube video about Gutsy](https://www.youtube.com/watch?v=o0uIS8XL1gE). Feel free to edit the HTML however you like! 
 
@@ -353,7 +353,7 @@ To stop and remove the containers:
 docker-compose down
 ```
 
-> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04x.png)
+> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04x.jpg)
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
