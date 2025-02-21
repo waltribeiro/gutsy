@@ -20,8 +20,6 @@
   - [Step 14: Stop and Cleanup](#step-14-stop-and-cleanup)
   - [Conclusion](#conclusion)
 
-
-
 # Secure Web App Deployment Tutorial
 [Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
 
@@ -35,7 +33,7 @@ In this tutorial you'll need:
 4. [Github](https://www.github.com/) account (optional) – to store and manage your code
 
 ## Step 1: Set Up a Server
-I'm using Digital Ocean, but you can use any cloud (AWS, Vultr, GCP, Equinix).
+I'm using DigitalOcean, but you can use any cloud (AWS, Vultr, GCP, Equinix).
 
 Here’s how I started:
 
@@ -43,12 +41,12 @@ Here’s how I started:
 2. Create a new droplet with `Ubuntu 24.10` (or similar)
 3. Choose a low-cost droplet (mine was $4/month)
 4. Enable `SSH` and create an `SSH key pair`
-5. Deploy the droplet and note the public IP address at `graphs > ipv4` inside of Digital Ocean
+5. Deploy the droplet and note the public IP address at `graphs > ipv4` inside of DigitalOcean
 
 ![gutsy](images/image-gutsy-01x.jpg)
 
 ## Step 2: Connect to Your Server
-Now that we're renting a server from Digital Ocean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
+Now that we're renting a server from DigitalOcean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
 
 Follow this format:
 ```sh
@@ -271,7 +269,7 @@ You should see something like this:
 This code has some CSS styling, a header, and an embedded [Youtube video about Gutsy](https://www.youtube.com/watch?v=o0uIS8XL1gE). Feel free to edit the HTML however you like! 
 
 ## Step 9: Generate a Self-Signed TLS Certificate
-We're getting to the end. Now we'll just do the certificates, and then we'll be able to access our new secure (HTTPS) website hosted on Digital Ocean.
+We're getting to the end. Now we'll just do the certificates, and then we'll be able to access our new secure (HTTPS) website hosted on DigitalOcean.
 
 `cd` into the `proxy/certs` directory, and run this command to generate a self-signed certificate:
 
@@ -353,7 +351,7 @@ To stop and remove the containers:
 docker-compose down
 ```
 
-> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04x.jpg)
+> **Note:** Be sure to delete your DigitalOcean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04x.jpg)
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
