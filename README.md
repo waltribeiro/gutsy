@@ -386,21 +386,21 @@ docker-compose down
 
 ## Deliverables
 #### CONTAINERS
-- secure-web-app-proxy
-Line 5 is HTTPS
+`secure-web-app-proxy`
+- Line 5 is HTTPS
 https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L5
 
-- secure-web-app – 
-Line 13 hosts confidential content after authentication
+`secure-web-app`
+- Line 13 hosts confidential content after authentication
 https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L13
 
 #### PORTS
-- 80 (HTTP)
-Line 21 redirects all traffic to HTTPS
+`80 (HTTP)`
+- Line 21 redirects all traffic to HTTPS
 https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L21
 
-- 443 (HTTPS)
-Line 5 handles secure connections via TLS
+`443 (HTTPS)`
+- Line 5 handles secure connections via TLS
 https://github.com/waltribeiro/gutsy/blob/6fb94c60402360c3ea8d34b10f244a32d98361d3/proxy/nginx.conf#L5
 
 #### PATH
