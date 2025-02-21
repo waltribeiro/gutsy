@@ -54,7 +54,7 @@ ssh root@$YOUR_SERVER_IP
 
 So then you should see this: 
 
-![gutsy](/gutsy/images/image-gutsy-02.png)
+![gutsy](images/image-gutsy-02.png)
 
 
 ## Step 3: Install Docker and Docker Compose
@@ -328,7 +328,7 @@ To stop and remove the containers:
 docker-compose down
 ```
 
-> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](/gutsy/images/image-gutsy-04.png)
+> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](images/image-gutsy-04.png)
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
