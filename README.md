@@ -22,8 +22,11 @@
   - [Conclusion](#conclusion)
 
 
+
 # Secure Web App Deployment Tutorial
 Gutsy is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
+
+![alt text](images/image-gutsy-06.png)
 
 # Pre Req
 In this tutorial you'll need:
