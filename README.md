@@ -1,4 +1,4 @@
-![alt text](images/image-gutsy-01.png)
+![gutsy](images/image-gutsy-01.png)
 <br></br>
 
 ## TABLE OF CONTENTS
@@ -26,19 +26,19 @@
 # Secure Web App Deployment Tutorial
 Gutsy is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
 
-![alt text](images/image-gutsy-06.png)
+![gutsy](images/image-gutsy-06.png)
 
 # Pre Req
 In this tutorial you'll need:
-1. DigitalOcean account – to deploy your secure web server
-2. Docker & Docker Compose installed – to containerize and run your app
+1. [DigitalOcean](https://www.digitalocean.com/) account – to deploy your secure web server
+2. [Docker](https://www.docker.com/) & Docker Compose installed – to containerize and run your app
 3. Knowledge of Linux command lines – to communicate with your server
-4. GitHub account (optional) – to store and manage your code
+4. [Github](https://www.github.com/) account (optional) – to store and manage your code
 
 ## Step 1: Set Up a Server
 I'm using Digital Ocean, but you can use any cloud (AWS, Vultr, GCP, Equinix). Here’s how I got started:
 
-1. Create a DigitalOcean account and log in
+1. Create a `DigitalOcean` account and log in
 2. Create a new droplet with `Ubuntu 24.10` (or similar)
 3. Choose low-cost droplet (mine was $4/month)
 4. Enable `SSH` and create an `SSH key pair` if you don’t have one
@@ -54,7 +54,7 @@ ssh root@$YOUR_SERVER_IP
 
 So then you should see this: 
 
-![alt text](/gutsy/images/image-gutsy-02.png)
+![gutsy](/gutsy/images/image-gutsy-02.png)
 
 
 ## Step 3: Install Docker and Docker Compose
@@ -76,7 +76,7 @@ Did it install successfully? Let's find out!
 docker --version
 docker-compose --version
 ```
-![alt text](/gutsy/images/image-gutsy-03.png)
+![gutsy](/gutsy/images/image-gutsy-03.png)
 
 LGTM.
 
@@ -305,6 +305,22 @@ This builds your app (if needed) and runs it in the background, so you can keep 
 ## Step 13: Push to GitHub
 As mentioned in the pre-reqs, this is optional. You can save your files locally, or use a hub like Github for collaboration and management.
 
+Your tree directory for the file structure will look like this:
+```
+.
+└── secret-web-app
+     ├── docker-compose.yml
+     ├── proxy
+     │  ├── Dockerfile
+     │  ├── certs
+     │  │  ├── server.crt
+     │  │  └── server.key
+     │  └── nginx.conf
+     └── web-server
+          ├── Dockerfile
+          └── index.html
+```
+
 ## Step 14: Stop and Cleanup
 To stop and remove the containers:
 
@@ -312,11 +328,9 @@ To stop and remove the containers:
 docker-compose down
 ```
 
-Be sure to delete your Digital Ocean droplet after this tutorial.
-
-![alt text](images/image-gutsy-04.png)
+> **Note:** Be sure to delete your Digital Ocean droplet after this tutorial. <br></br> ![gutsy](/gutsy/images/image-gutsy-04.png)
 
 ## Conclusion
 That's it! You just successfully deployed a secure web app using Docker, Nginx, and TLS authentication! If security is important to you, then [check out Gutsy](https://gutsy.com/)!
 
-![alt text](images/image-gutsy-05.png)
+![gutsy](images/image-gutsy-05.png)
