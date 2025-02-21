@@ -1,4 +1,4 @@
-![gutsy](images/image-gutsy-05x.gif)
+![gutsy](images/image-gutsy-05xx.gif)
 
 ## TABLE OF CONTENTS
 -----------------
