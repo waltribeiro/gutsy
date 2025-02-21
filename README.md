@@ -2,8 +2,8 @@
 
 ## TABLE OF CONTENTS
 -----------------
-- [Secure Web App Deployment Tutorial](#secure-web-app-deployment-tutorial)
-  - [Pre Req](#pre-req)
+- [Tutorial: Build A Secure Web Server](#tutorial-build-a-secure-web-server)
+  - [Pre Reqs](#pre-reqs)
   - [Step 1: Set Up a Server](#step-1-set-up-a-server)
   - [Step 2: Connect to Your Server](#step-2-connect-to-your-server)
   - [Step 3: Install Docker and Docker Compose](#step-3-install-docker-and-docker-compose)
@@ -20,16 +20,16 @@
   - [Step 14: Stop and Cleanup](#step-14-stop-and-cleanup)
   - [Conclusion](#conclusion)
 
-# Secure Web App Deployment Tutorial
-[Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption, giving you a hands-on way to learn how to protect your own confidential data.
+# Tutorial: Build A Secure Web Server
+[Gutsy](https://gutsy.com/) is all about security and solving the challenge of keeping sensitive content safe online. In this tutorial, we’ll build a secure web server with authentication and encryption and learn how to protect your own confidential data.
 
 ![gutsy](images/image-gutsy-09x.jpg)
 
-## Pre Req
+## Pre Reqs
 In this tutorial you'll need:
 1. [DigitalOcean](https://www.digitalocean.com/) account – to deploy your secure web server
 2. [Docker](https://www.docker.com/) & Docker Compose installed – to containerize and run your app
-3. Knowledge of Linux command lines – to communicate with your server
+3. [Linux commands](https://www.digitalocean.com/community/tutorials/linux-commands) – to communicate with your server
 4. [Github](https://www.github.com/) account (optional) – to store and manage your code
 
 ## Step 1: Set Up a Server
@@ -68,7 +68,7 @@ curl -L "https://github.com/docker/compose/releases/latest/download/docker-compo
 chmod +x /usr/local/bin/docker-compose
 ```
 
-The `apt` installs the latest software packages
+The `apt` installs the latest software packages.
 
 The `chmod` gives us permission to execute the file.
 
@@ -106,7 +106,7 @@ mkdir proxy && cd proxy
 touch Dockerfile
 ```
 
-The `Dockerfile` is blank, so let's add to it using `nano`:
+The `Dockerfile` is blank, so let's `nano` into it:
 ```sh
 nano Dockerfile
 ```
@@ -142,6 +142,17 @@ Here's our 2nd `Dockerfile`!
 
 Inside the `webserver` directory, create a file named `Dockerfile`:
 
+```sh
+touch Dockerfile
+```
+
+Same as before - the `Dockerfile` is blank, so let's `nano` into it:
+```sh
+nano Dockerfile
+```
+
+Then we'll paste this into it:
+
 ```dockerfile
 FROM nginx:latest
 
@@ -151,13 +162,13 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-Once you're done, save and exit by pressing:
+Same as before - once you're done, save and exit by pressing:
 
 - `CTRL` + `X` (to exit)
 - `Y` (to confirm the changes)
 - `Enter` (to save the file name and close)
 
-Now our Dockerfile is ready! 
+Now our 2nd Dockerfile is ready! 
 
 ## Step 7: Create the Nginx Configuration File
 Inside the `proxy` directory, create a file named `nginx.conf`:
@@ -324,6 +335,10 @@ This builds your app (if needed) and runs it in the background, so that you can 
   -  password: **secret-passphrase**
 - Ensure HTTP (`http://$YOUR_SERVER_IP/...`) redirects to HTTPS
 - Verify invalid paths return `403 Forbidden`
+
+When first visiting the server, you'll see this warning. Click on "`advanced > visit`".
+
+![gutsy](images/image-gutsy-10x.jpg)
 
 ## Step 13: Push to GitHub
 As mentioned in the pre-reqs, this is optional. You can save your files locally, or use a hub like Github for collaboration and management.
