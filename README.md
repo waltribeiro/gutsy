@@ -4,13 +4,13 @@
 -----------------
 - [Tutorial: Build A Secure Web Server](#tutorial-build-a-secure-web-server)
   - [Pre Reqs](#pre-reqs)
-  - [Step 1: Set Up a Server](#step-1-set-up-a-server)
+  - [Step 1: Set Up Your Server](#step-1-set-up-your-server)
   - [Step 2: Connect to Your Server](#step-2-connect-to-your-server)
   - [Step 3: Install Docker and Docker Compose](#step-3-install-docker-and-docker-compose)
   - [Step 4: Set Up Your Project Structure](#step-4-set-up-your-project-structure)
-  - [Step 5: Create the Reverse Proxy Dockerfile](#step-5-create-the-reverse-proxy-dockerfile)
-  - [Step 6: Create the Web Server Dockerfile](#step-6-create-the-web-server-dockerfile)
-  - [Step 7: Create the Nginx Configuration File](#step-7-create-the-nginx-configuration-file)
+  - [Step 5: Dockerfile - Reverse Proxy](#step-5-dockerfile---reverse-proxy)
+  - [Step 6: Dockerfile - Web Server](#step-6-dockerfile---web-server)
+  - [Step 7: Create the Nginx Config](#step-7-create-the-nginx-config)
   - [Step 8: Create the Web Page](#step-8-create-the-web-page)
   - [Step 9: Generate a Self-Signed TLS Certificate](#step-9-generate-a-self-signed-tls-certificate)
   - [Step 10: Create the Docker Compose File](#step-10-create-the-docker-compose-file)
@@ -36,7 +36,7 @@ In this tutorial you'll need:
 3. [Linux commands](https://www.digitalocean.com/community/tutorials/linux-commands) – to communicate with your server
 4. [Github](https://www.github.com/) account (optional) – to store and manage your code
 
-## Step 1: Set Up a Server
+## Step 1: Set Up Your Server
 I'm using DigitalOcean, but you can use any cloud (AWS, Vultr, GCP, Equinix).
 
 Here’s how I started:
@@ -101,7 +101,7 @@ Next, we'll create 3 directories inside that `secure-web-app` location:
 mkdir proxy webserver proxy/certs
 ```
 
-## Step 5: Create the Reverse Proxy Dockerfile
+## Step 5: Dockerfile - Reverse Proxy
 We'll need 2 Dockerfiles — one for the **proxy** and one for the **web server**. The proxy handles authentication and securely passes all requests to the web server. The web server simply serves the HTML.
 
 First, create the `proxy` directory, navigate into it, and create a `Dockerfile` there:
@@ -141,7 +141,7 @@ Once you're done, save and exit by pressing:
 - `Y` (to confirm the changes)
 - `Enter` (to save the file name and close)
 
-## Step 6: Create the Web Server Dockerfile
+## Step 6: Dockerfile - Web Server
 Here's our 2nd `Dockerfile`!
 
 Inside the `webserver` directory, create a file named `Dockerfile`:
@@ -174,7 +174,7 @@ Same as before - once you're done, save and exit by pressing:
 
 Now our 2nd Dockerfile is ready! 
 
-## Step 7: Create the Nginx Configuration File
+## Step 7: Create the Nginx Config
 Inside the `proxy` directory, create a file named `nginx.conf`:
 
 ```nginx
@@ -357,7 +357,7 @@ You should see something like this:
 If those 3 steps pass, then you built the server correctly!
 
 ## Step 13: Push to GitHub
-As mentioned in the pre-reqs, this is optional. You can save your files locally, or use a hub like Github for collaboration and management.
+As mentioned in the pre-reqs above, this is optional. You can save your files locally, or use a hub like Github for collaboration and management.
 
 Your tree directory for the file structure will look like this:
 ```
