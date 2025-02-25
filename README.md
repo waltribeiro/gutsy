@@ -64,7 +64,8 @@ Follow this format:
 ssh root@$YOUR_SERVER_IP
 ```
 
-> **Note:** My server's ipv4 is `143.198.184.74`, so I'll type `ssh root@143.198.184.74`
+> **Note:** My server's ipv4 is `143.198.184.74`, so I'll type:\
+> `ssh root@143.198.184.74`
 
 You should then see something like this:
 
