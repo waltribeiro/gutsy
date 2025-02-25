@@ -49,6 +49,13 @@ Here’s how I started:
 
 ![gutsy](images/image-gutsy-01x.jpg)
 
+> **Note:**
+> You could launch a server using [DigitalOcean's CLI](https://docs.digitalocean.com/reference/doctl/how-to/install/) if you prefer that:
+> - $ brew install doctl
+> - $ create api key
+> - $ doctl auth init 
+> - $ doctl compute droplet create --region sfo2 --image ubuntu-24-04-x64 --size s-1vcpu-1gb <DROPLET-NAME>
+
 ## Step 2: Connect to Your Server
 Now that we're renting a server from DigitalOcean, we need to "talk" to it from our laptop. So I'll open up iTerm (other options are Windows PowerShell, VS Code's terminal, or Ghostty), and then `SSH` into the server.
 
