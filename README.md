@@ -367,7 +367,7 @@ As mentioned in the pre-reqs above, this is optional. You can save your files lo
 Your tree directory for the file structure will look like this:
 ```
 .
-└── secret-web-app
+└── secure-web-app
      ├── docker-compose.yml
      ├── proxy
      │  ├── Dockerfile
