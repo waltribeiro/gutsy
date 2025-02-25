@@ -198,7 +198,11 @@ http {
     }
 
     server {
-        listen 80;
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name _;
+
         return 301 https://$host$request_uri;
     }
 }
@@ -290,8 +294,8 @@ We're getting to the end. Now we'll just do the certificates, and then we'll be 
 
 ```sh
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-  -keyout proxy/certs/server.key -out proxy/certs/server.crt \
-  -subj "/C=US/ST=State/L=City/O=Company/OU=Org/CN=localhost"
+-keyout server.key -out server.crt \
+-subj "/C=US/ST=State/L=City/O=Company/OU=Org/CN=localhost"
 ```
 
 ## Step 10: Create the Docker Compose File
@@ -305,6 +309,7 @@ services:
     build: ./proxy
     ports:
       - "443:443"
+      - "80:80"
     depends_on:
       - webserver
 
