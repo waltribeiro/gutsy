@@ -50,7 +50,7 @@ Here’s how I started:
 ![gutsy](images/image-gutsy-01x.jpg)
 
 > **Note:**
-> You could launch a server using [DigitalOcean's CLI](https://docs.digitalocean.com/reference/doctl/how-to/install/) if you prefer that:
+> You could create / destroy a server using [DigitalOcean's CLI](https://docs.digitalocean.com/reference/doctl/how-to/install/) if you prefer:
 > - $ brew install doctl
 > - $ create api key
 > - $ doctl auth init 
